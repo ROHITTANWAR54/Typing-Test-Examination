@@ -1,0 +1,52 @@
+﻿@{
+
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+    ViewBag.title = "Admin Panal";
+}
+
+<center>
+
+    <h2 style="color:green">All Candidates Records</h2><font size="5">
+        <table border="1"  sstyle="font-size: 10px;">
+            <tr>
+                <th><font size="5">Roll No:</font> </th>
+                <th><font size="5">Name: </font></th>
+                <th><font size="5">Father: : </font></th>
+                <th><font size="5">Email: </font></th>
+                <th><font size="5">Password: </font></th>
+                <th><font size="5">Birth: </font></th>
+                <th><font size="5">Gender: </font></th>
+                <th>Delete</th>
+                <th>Update</th>
+            </tr>
+            @foreach (var Account in ViewBag.Account)
+            {
+                <tr style="font-size :20px;">
+                    <td>@Account.Rollno</td>
+                    <td>@Account.Name</td>
+                    <td>@Account.Father</td>
+                    <td>@Account.Email</td>
+                    <td>@Account.Password</td>
+                    <td>@Account.Birth</td>
+                    <td>@Account.Gender</td>
+                    <td>
+                        <form asp-controller="Account" asp-action="delete" method="post">
+                            <input type="hidden" value="@Account.Rollno" />
+                            <input type="submit" value="Delete" />
+                        </form>
+                    </td>
+                    <td>
+                        <form asp-controller="Account" asp-action="update2" method="post">
+                        <input type="hidden" value="@Account.Rollno" />
+                        <input type="submit" value="Update" />
+                    </form>
+                    </td>
+                </tr>
+            }
+        </table>
+    </font>
+</center>
+ <br><br><br><br><br>
+    <br><br><br><br>
+

@@ -1,0 +1,62 @@
+﻿@{ 
+    Layout = null;
+}
+@using Microsoft.AspNetCore.Http;
+
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body><center />
+        <table border="1" >
+            <tr>
+                <td colspan="3">
+                    <h1 align="center" style="font-family:Stencil;">  <img src="~/images/home1.png" width="100px"><br /> Typing Test Result</h1>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Id=</b>@ViewBag.Typing.Id
+                </td>
+                <td>
+                    <b>Wpm=</b>@ViewBag.Typing.Wpm
+                </td>
+                <td>
+                    <b>Error=</b>@ViewBag.Typing.Error
+</td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Accuracy=<b>@ViewBag.Typing.Accuracy
+</td>
+                <td>
+                    <b>Typing Time=</b>@ViewBag.Typing.TypingTime
+</td>
+                <td>
+                    <b>Username= </b>@ViewBag.Typing.TypingTime
+</td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <b>
+                        Given Contain =</b>
+    <textarea disabled cols="53" rows="10" wrap="on" style="width: 100%; border: 1px solid #344270; padding: 2px; font-family:Arial;
+                 font-size:9pt">@ViewBag.Typing.Given</textarea>
+    <br />
+    
+    <b>
+        Typed Contain =</b>
+    <textarea disabled cols="53" rows="10" wrap="on"
+              style="width: 100%; border: 1px solid #344270; padding: 2px; font-family:Arial;
+                 font-size:9pt">@ViewBag.Typing.Typed1</textarea>
+    <br>
+
+</td>
+            </tr>
+        </table>
+       
+        <button>
+        <a asp-controller="Account" asp-action="login"><font>Exit Exam</font></a>
+    </button>
+            </body>
+    </html>

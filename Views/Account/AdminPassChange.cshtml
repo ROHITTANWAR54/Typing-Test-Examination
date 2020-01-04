@@ -1,0 +1,21 @@
+﻿@{ 
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@model  TypingTestExamination.Models.Admin 
+<h2 align="center">Admin Credential Details</h2>
+<form asp-controller="Account" asp-action="AdminPassChange" method="post">
+    <table border="1" align="center">
+        <tr>
+            <td>Admin Email</td>
+            <td><input asp-for="Email"></td>
+        </tr>
+        <tr>
+            <td>Admin Password</td>
+            <td><input asp-for="Password"></td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td><input type="submit" value="Change"></td>
+        </tr>
+    </table>
+</form>

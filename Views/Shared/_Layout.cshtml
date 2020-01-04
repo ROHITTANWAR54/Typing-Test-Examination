@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <style>   
+   
+       ul{
+	list-style-type:none;
+	margin:0;
+	padding:0;
+	overflow:hidden;
+	}
+	a:link,a:visited{
+	display:block;
+	color:#FFFFFF;
+	background-color:blue;
+	width:179px;
+	text-align:center;
+	padding:5px;
+	text-transform:uppercase;
+	text-decoration:none;
+	}
+	a:hover,a:active{
+	background-color:red;
+	}	
+	li{
+	float:left;
+	}
+    </style>
+</head>
+<body style="background-image:url('@Url.Content("/images/b6.jpeg")'); ">
+    <table border="0" align="center"  width="50%" height="90%">
+        <tr  width="50%">
+            <td  colspan="6">
+                <img src="~/images/h.JPG" />
+
+            </td>
+        </tr>
+        <tr width="50%">
+            <td><a asp-controller="Account" asp-action="AboutUs"> About Us </a></td>
+            <td><a asp-controller="Account" asp-action="index">Home </a></td>
+            <td><a asp-controller="Account" asp-action="Add"> Registration</a></td>
+            <td><a asp-controller="Account" asp-action="Login"> Login </a></td>
+            <td><a asp-controller="Account" asp-action="AdminLogin"> Admin Login </a></td>
+            <td><a asp-controller="Account" asp-action="ContactUs"> Contact Us </a></td>
+            <td><a asp-controller="Typing" asp-action="GetResult">Get Result</a></td>
+        </tr>
+        <tr>
+            <td colspan="6" height="420px" width="50%">
+                @RenderBody()            </td>
+        </tr>
+    </table>
+
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+﻿@{
+
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+    ViewBag.title = "Admin Panal";
+}
+@model TypingTestExamination.Models.Account
+<center>
+    <h2 align="center" style="color:green">Update Candidate</h2>
+    <form asp-controller="Account" asp-action="Update2" method="post">
+        <table border="0">
+            <tr>
+                <td><font size="5">Rollno: </font></td>
+                <td>
+                    <input asp-for="Rollno" style="width:200px;height:25px" required="" />
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td align="center">
+                    <br>
+                    <input type="submit" value="Delete" style="width:100px;height:30px" />
+                </td>
+            </tr>
+        </table><br><br><br><br><br><br><br><br>
+        <br><br><br><br>
+    </form>
+    </center>

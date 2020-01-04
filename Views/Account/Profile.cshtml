@@ -1,0 +1,50 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.title = "User Profile";
+}
+
+<center>
+<table><tr><td><form asp-controller="Typing" asp-action="GetResult" method="post">
+    <input type="number" name="id">
+    <input type="submit" value="Get Result">
+</form>
+        </td>
+    </tr>
+    <tr>
+    <td>
+                                                     <h2 style="color:green">Candidate Profile</h2><font size="5">
+                                                      <table border="1" style="font-size: 30px;">
+                                                          <tr>
+                                                              <td><font size="5">Roll No:</font> </td>
+                                                              <td>@ViewBag.Account.Rollno</td>
+
+                                                          </tr>
+                                                          <tr>
+                                                              <td><font size="5">Name:</font> </td>
+                                                              <td>@ViewBag.Account.Name</td>
+                                                          </tr>
+                                                          <tr>
+                                                              <td><font size="5">Father: : </font></td>
+                                                              <td>@ViewBag.Account.Father</td>
+                                                          </tr>
+                                                          <tr>
+                                                              <td><font size="5">Email: </font></td>
+                                                              <td>@ViewBag.Account.Email</td>
+                                                          </tr>
+                                                          <tr>
+                                                              <td><font size="5">Password: </font></td>
+                                                              <td>@ViewBag.Account.Password</td>
+                                                          </tr>
+                                                          <tr>
+                                                              <td><font size="5">Age: </font></td>
+                                                              <td>@ViewBag.Account.Birth</td>
+                                                          </tr>
+                                                          <tr>
+                                                              <td><font size="5">Gender: </font></td>
+                                                              <td>@ViewBag.Account.Gender</td>
+                                                          </tr>
+
+                                                      </table>
+    </td></tr></table>
+    </font>
+</center>

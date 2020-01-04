@@ -1,0 +1,100 @@
+﻿@{
+
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+    ViewBag.title = "Admin Panal";
+}
+    @model TypingTestExamination.Models.Account
+
+     <center>
+         <h3 style="color:Green">@ViewBag.update</h3>
+         <h1 style="color:red">Candidate Updation Form</h1>
+         <form method="post" asp-controller="Account" asp-action="Update3">
+             <table cellpadding="2" cellspacing="2">
+                 <tr>
+                     <td><font size="4">Id</font></td>
+                     <td>
+                         <input asp-for="Rollno" value="@ViewBag.Account.Id" readonly style="width:200px;height:30px" />
+                     </td>
+                     <td>
+                         <span asp-validation-for="Rollno"></span>
+                     </td>
+                 </tr>
+                 <tr>
+                     <td><font size="4">Name</font></td>
+                     <td>
+                         <input asp-for="Name"  value="@ViewBag.Account.Name" style="width:200px;height:30px" />
+                     </td>
+                     <td>
+                         <span asp-validation-for="Name"></span>
+                     </td>
+                 </tr>
+
+                 <tr>
+                     <td><font size="4">Father Name: </font></td>
+                     <td>
+                         <input asp-for="Father" value="@ViewBag.Account.Father" style="width:200px;height:30px" />
+                     </td>
+                     <td>
+                         <span asp-validation-for="Father"></span>
+                     </td>
+                 </tr>
+                 <tr>
+                     <td><font size="4">Email:</font></td>
+                     <td>
+                         <input asp-for="Email" value="@ViewBag.Account.Email" style="width:200px;height:30px" />
+                     </td>
+                     <td>
+                         <span asp-validation-for="Email"></span>
+                     </td>
+                 </tr>
+                 <tr>
+                     <td><font size="4">Password:</font></td>
+                     <td>
+                         <input asp-for="Password" type="password" value="@ViewBag.Account.Password" style="width:200px;height:30px" />
+                     </td>
+                     <td>
+                         <span asp-validation-for="Password"></span>
+                     </td>
+                 </tr>
+                 <tr>
+                     <td><font size="4">Age:</font></td>
+                     <td>
+                         <input asp-for="Birth" value="@ViewBag.Account.Birth" style="width:200px;height:30px" />
+                     </td>
+                     <td>
+                         <span asp-validation-for="Birth"></span>
+                     </td>
+                 </tr>
+                 <tr>
+                     <td><font size="4">Gender:</font></td>
+                     <td>
+
+                         @if (@ViewBag.Account.Gender != "Female")
+                         {
+                             <input type="radio" asp-for="Gender" checked value="Male" style="width:20px;height:20px"><font>Male</font>
+                             <input type="radio" asp-for="Gender" value="Female" style="width:20px;height:20px"><font>Female</font>
+                         }
+                         else
+                         {
+                             <input type="radio" asp-for="Gender" value="Male" style="width:20px;height:20px"><font>Male</font>
+                             <input type="radio" asp-for="Gender" checked value="Female" style="width:20px;height:20px"><font>Female</font>
+                         }
+                     </td>
+                     <td>
+                         <span asp-validation-for="Gender"></span>
+                     </td>
+                 </tr>
+                 <tr>
+                     <td>&nbsp;</td>
+                     <td>
+                         <br>
+                         <input type="submit" value="Update" style="width:100px;height:30px" />
+                     </td>
+                 </tr>
+
+             </table>
+         </form><br>
+
+     </center>
+     <br><br><br>

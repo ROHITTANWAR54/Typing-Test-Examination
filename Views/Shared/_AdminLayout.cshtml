@@ -1,0 +1,85 @@
+﻿@using Microsoft.AspNetCore.Http;
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <style>
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        a:link, a:visited {
+            display: block;
+            color: #FFFFFF;
+            background-color: blue;
+            width: 179px;
+            text-align: center;
+            padding: 5px;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+
+        a:hover, a:active {
+            background-color: red;
+        }
+
+        li {
+            float: left;
+        }
+
+        .menu {
+            background-color: black;
+            width: 180px;
+            text-align: center;
+            padding: 2px;
+        }
+    </style>
+</head>
+<body style="background-image:url('@Url.Content("/images/bg.jpg")'); ">
+    <table border="0" align="center" width="50%" height="90%">
+        <tr width="50%">
+            <td colspan="6">
+                <img src="~/images/h.JPG" />
+
+            </td>
+        </tr>
+        <tr width="50%">
+            <td><a asp-controller="Account" asp-action="AboutUs"> About Us </a></td>
+            <td><a asp-controller="Account" asp-action="index">Home </a></td>
+            <td><a asp-controller="Account" asp-action="Add"> Registration</a></td>
+            <td><a asp-controller="Account" asp-action="Login"> Login </a></td>
+            <td><a asp-controller="Account" asp-action="AdminLogin"> Admin Login </a></td>
+            <td><a asp-controller="Account" asp-action="ContactUs"> Contact Us </a></td>
+        </tr>
+        <tr>
+            <td width="10%" class="menu" colspan="1">
+                <h3 style="color:white;background-color:green">Record Menu</h3>
+                <a asp-controller="Typing" asp-action="GetResult">Check Result</a><br><br>
+                <a asp-controller="Account" asp-action="Viewall">View All Candidates</a><br><br>
+                <a asp-controller="Account" asp-action="update1">Update Candidates</a><br><br>
+                <a asp-controller="Account" asp-action="Delete">Delet Candidates</a><br><br>
+
+                <br><br><br>
+            </td>
+
+            <td colspan="4" height="440px" width="10%">
+                @RenderBody()
+            </td>
+            <td class="menu" height="40px" width="50%"><br>
+                <h3 style="color:white;background-color:green">Admin Menu</h3>
+                <a asp-controller="" asp-action="">Uplaod Typing Test Containt</a><br><br>
+               <h3 style="color:white;">Admin: @Context.Session.GetString("AdminEmail")</h3>
+                <a asp-controller="Account" asp-action="AdminLogout">Logout</a><br><br>
+                <br><br><br><br>
+                <br><br><br><br><br><br>
+            </td>
+        </tr>
+    </table>
+
+
+</body>
+</html>
